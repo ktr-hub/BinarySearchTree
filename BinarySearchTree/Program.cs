@@ -6,7 +6,10 @@ namespace BinarySearchTree
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Binary Search Tree!");
+            BST bst = new BST();
+            bst.Add(56);
+            bst.Add(30);
+            bst.Add(70);
         }
     }
 }
