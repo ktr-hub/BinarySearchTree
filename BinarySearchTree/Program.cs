@@ -13,6 +13,7 @@ namespace BinarySearchTree
             bst.Add(99);
             bst.Add(20);
             Console.WriteLine(bst.Size());
+            Console.WriteLine(bst.Search(bst.root,999));
         }
     }
 }

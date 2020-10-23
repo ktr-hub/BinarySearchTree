@@ -6,7 +6,7 @@ namespace BinarySearchTree
 {
     public class BST
     {
-        INode root;
+        public INode root;
         int leftCount = 0;
         int rightCount = 0;
         public BST()
@@ -76,5 +76,30 @@ namespace BinarySearchTree
                 return 1+leftCount+rightCount;
             }
         }
+
+        bool result;
+        public bool Search(INode node, int data)
+        {
+            
+            if (node == null)
+            {
+                return false;
+            }
+            if (data.Equals(node.data))
+            {
+                Console.WriteLine("Data " + data + " Found");
+                result = true;
+            }
+            if (data.CompareTo(node.data)<0)
+            {
+                Search(node.leftNode, data);
+            }
+            if (data.CompareTo(node.data)>0)
+            {
+                Search(node.rightNode, data);
+            }
+            return result;
+        }
+
     }
 }
