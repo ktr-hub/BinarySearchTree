@@ -7,6 +7,8 @@ namespace BinarySearchTree
     public class BST
     {
         INode root;
+        int leftCount = 0;
+        int rightCount = 0;
         public BST()
         {
             this.root = null;
@@ -45,6 +47,34 @@ namespace BinarySearchTree
                 }
             }
             Console.WriteLine(data + " Added Successfully");
+        }
+
+        public void display(INode root)
+        {
+            if (root.leftNode != null)
+            {
+                leftCount++;
+                display(root.leftNode);
+            }
+            Console.WriteLine("Data : " + root.data);
+            if (root.rightNode != null)
+            {
+                rightCount++;
+                display(root.rightNode);
+            }
+        }
+
+        public int Size()
+        {
+            if (root == null)
+            {
+                return 0;
+            }
+            else
+            {
+                display(root);
+                return 1+leftCount+rightCount;
+            }
         }
     }
 }
